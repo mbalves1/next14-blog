@@ -1,15 +1,7 @@
 'use client'
 
-import { StrictMode, useState } from "react"
-
-function Card({title = "Nothing to say!"}) {
-  return (
-    <div className="border rounded-md border-gray-600 p-4 my-1">
-      {title}
-    </div>
-  )
-}
-
+import Card from "@/components/Card"
+import { useRef, useState } from "react"
 
 function CardBorder({children}) {
   return (
@@ -22,8 +14,15 @@ function CardBorder({children}) {
 export default function Home() {
 
   const [isVisible, setIsVisible] = useState(true)
+  const [myName, setName] = useState("")
+  const inputRef = useRef()
+
   const handleClick = () => {    
     return setIsVisible(!isVisible);
+  }
+
+  const handleName = () => {
+    setName(inputRef.current.value);
   }
   
   return (
@@ -53,9 +52,22 @@ export default function Home() {
 
         <div>{ isVisible }</div>
 
-        <button className="border p-2 rounded-md m-2" onClick={handleClick}>
+        <div className="border-red-300 p-3 text-white">{ myName }</div>
+
+        <div>
+          <input 
+            ref={inputRef}
+            className="border p-2 rounded-md text-black" 
+            placeholder="Type your name"
+          />
+        </div>
+
+        <button className="border p-2 rounded-md my-2 mr-2" onClick={handleName}>Set Name</button>
+
+        <button className="border p-2 rounded-md my-2" onClick={handleClick}>
           { isVisible ? 'Visible' : 'Not Visible' }
         </button>
+
       </div>
     </>
   );
