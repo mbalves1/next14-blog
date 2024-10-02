@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Counter from "./counter";
 
 export default function Header() {
   return (
@@ -15,6 +16,10 @@ export default function Header() {
             <Link href="/about/projects">Projects</Link>
           </li>
         </ul>
+
+        <div>
+          <Counter></Counter>
+        </div>
       </header>
     </>
   )
