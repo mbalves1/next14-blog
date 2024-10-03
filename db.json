@@ -1,0 +1,64 @@
+{
+  "repos": [
+    {
+      "id": 1,
+      "title": "Next.js Introduction",
+      "description": "A beginner's guide to Next.js and its core concepts.",
+      "stargazers_count": 150
+    },
+    {
+      "id": 2,
+      "title": "Advanced React Patterns",
+      "description": "Exploring advanced patterns in React for building complex UIs.",
+      "stargazers_count": 230
+    },
+    {
+      "id": 3,
+      "title": "Solidity Smart Contracts",
+      "description": "Learn how to create secure and efficient smart contracts using Solidity.",
+      "stargazers_count": 420
+    },
+    {
+      "id": 4,
+      "title": "Mastering CSS Grid",
+      "description": "A comprehensive guide to mastering CSS Grid for responsive layouts.",
+      "stargazers_count": 110
+    },
+    {
+      "id": 5,
+      "title": "Node.js Performance Tips",
+      "description": "Optimize your Node.js applications with these performance tips.",
+      "stargazers_count": 340
+    },
+    {
+      "id": 6,
+      "title": "Introduction to Web3.js",
+      "description": "Get started with Web3.js for interacting with the Ethereum blockchain.",
+      "stargazers_count": 500
+    },
+    {
+      "id": 7,
+      "title": "REST API with Express.js",
+      "description": "Building a robust REST API using Express.js and Node.js.",
+      "stargazers_count": 280
+    },
+    {
+      "id": 8,
+      "title": "GraphQL in Practice",
+      "description": "Learn how to implement GraphQL in your applications effectively.",
+      "stargazers_count": 195
+    },
+    {
+      "id": 9,
+      "title": "Understanding TypeScript",
+      "description": "A guide to getting started with TypeScript in modern JavaScript projects.",
+      "stargazers_count": 390
+    },
+    {
+      "id": 10,
+      "title": "Vue.js Essentials",
+      "description": "Essential concepts and patterns for building web apps with Vue.js.",
+      "stargazers_count": 250
+    }
+  ]
+}
