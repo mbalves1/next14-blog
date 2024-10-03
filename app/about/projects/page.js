@@ -1,7 +1,7 @@
 export default function Projects() {
   return (
     <>
-      Projects
+      Projects! This wont be visible!
     </>
   )
 }
