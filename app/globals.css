@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+/*
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -24,4 +26,9 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+}
+*/
+
+body {
+  @apply bg-white text-gray-700 container mx-auto dark:bg-gray-900 dark:text-gray-300 max-w-2xl
 }

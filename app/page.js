@@ -27,7 +27,7 @@ export default function Home() {
   
   return (
     <>
-      <div className="p-20">
+      <div className="">
         <div>
         Hello World!
         </div>
@@ -52,7 +52,7 @@ export default function Home() {
 
         <div>{ isVisible }</div>
 
-        <div className="border-red-300 p-3 text-white">{ myName }</div>
+        <div className="border-red-300 p-3">{ myName }</div>
 
         <div>
           <input 
