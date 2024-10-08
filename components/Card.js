@@ -1,7 +1,7 @@
-export default function Card({title = "Nothing to say!"}) {
+export default function Card({ children, className }) {
   return (
-    <div className="border rounded-md border-gray-600 p-4 my-1">
-      {title}
+    <div className={`border rounded-md border-gray-600 p-4 ${className}`}>
+      {children}
     </div>
   )
 }

@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${roboto.className}`}>
         <Header />
-        <main className="">
+        <main className="mt-12">
           {children}
         </main>
       </body>
