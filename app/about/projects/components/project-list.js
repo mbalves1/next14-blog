@@ -9,6 +9,8 @@ export default async function ProjectsList() {
   
   const repos = await response.json()
 
+  throw new Error('oops')
+
   return (
     <ul className="grid grid-cols-1 md:grid-cols-2 md:gap-4">
       { repos.map(repo => (
