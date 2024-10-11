@@ -11,7 +11,7 @@ function CardBorder({children}) {
   )
 }
 
-export default function Home() {
+export default function Home({ searchParams }) {
 
   const [isVisible, setIsVisible] = useState(true)
   const [myName, setName] = useState("")
@@ -25,6 +25,11 @@ export default function Home() {
     setName(inputRef.current.value);
   }
   
+  console.log(searchParams);
+  if (searchParams.error) {
+    throw new Error('ppo')
+  }
+
   return (
     <>
       <div className="">
