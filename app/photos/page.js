@@ -17,7 +17,11 @@ export default function PhotosPage() {
             src={dog1}
             className="object-cover w-full h-full"
             alt="Picture of my dog"
-            sizes="(max-width: 768px) 100vw, 50vw"/>
+            sizes="(max-width: 768px) 100vw, 50vw"
+            priority={true}
+            quality={100}
+            placeholder="blur"
+            />
         </div>
         <div className="relative h-60 overflow-hidden">
           <Image
@@ -25,7 +29,11 @@ export default function PhotosPage() {
             src={dog2}
             className="object-cover w-full h-full"
             alt="Picture of my dog"
-            sizes="(max-width: 768px) 100vw, 50vw"/>
+            sizes="(max-width: 768px) 100vw, 50vw"
+            priority={true}
+            quality={50}
+            placeholder="blur"
+            />
         </div>
         <div className="relative h-60 overflow-hidden">
           <Image
@@ -33,7 +41,10 @@ export default function PhotosPage() {
             src={dog3}
             className="object-cover w-full h-full"
             alt="Picture of my dog"
-            sizes="(max-width: 768px) 100vw, 50vw"/>
+            sizes="(max-width: 768px) 100vw, 50vw"
+            quality={50}
+            placeholder="blur"
+            />
         </div>
         <div className="relative h-60 overflow-hidden">
           <Image
@@ -41,7 +52,10 @@ export default function PhotosPage() {
             src={dog4}
             className="object-cover w-full h-full"
             alt="Picture of my dog"
-            sizes="(max-width: 768px) 100vw, 50vw"/>
+            sizes="(max-width: 768px) 100vw, 50vw"
+            quality={50}
+            placeholder="blur"
+            />
         </div>
       </div>
     </div>
