@@ -1,11 +1,6 @@
 import { notFound } from "next/navigation"
 import { getPost } from "@/lib/posts"
 
-// const titles = {
-//   "first": "hello first",
-//   "second": "hello second",
-// }
-
 export async function generateMetadata({ params, searchParams }, parent) {
   const description = (await parent).description ?? "Default description"
 
