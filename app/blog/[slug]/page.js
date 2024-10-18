@@ -1,9 +1,13 @@
 import { notFound } from "next/navigation"
-import { getPost } from "@/lib/posts"
+import { getPost as getPostNotCached } from "@/lib/posts"
+import { cache } from "react"
+
+const getPost =cache(
+  async (slug) => await getPostNotCached(slug)
+)
 
 export async function generateMetadata({ params, searchParams }, parent) {
   const description = (await parent).description ?? "Default description"
-
 
   try {
     const { frontmatter } = await getPost(params.slug)

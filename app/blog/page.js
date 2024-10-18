@@ -1,28 +1,14 @@
-import { getPost } from '@/lib/posts';
-import fs from 'fs';
+
+import { getPosts } from '@/lib/posts';
 import Link from 'next/link';
-import path from 'path';
 
-export default async function BlogPostsPage() {
+export default async function BlogPostsPage({ searchParams }) {
 
-  const files = fs.readdirSync(
-    path.join(
-      process.cwd(), 'content'
-    )
-  );
-
-  const posts = await Promise.all(
-    files.map(async filename => {
-      const { frontmatter } = await getPost(filename)
-
-      return {
-        frontmatter,
-        slug: filename.replace('.mdx', '')
-      }
-    })
-  );
-
-  console.log(posts);
+  console.log(searchParams.tags);
+  const tags = searchParams.tags.split(',')
+  console.log('tags', tags);
+  
+  const posts = await getPosts({ tags });
 
   return (
     <>
