@@ -8,7 +8,7 @@ export default async function BlogPostsPage({ searchParams }) {
   const tags = searchParams.tags.split(',')
   console.log('tags', tags);
   
-  const posts = await getPosts({ tags });
+  const posts = await getPosts();
 
   return (
     <>
