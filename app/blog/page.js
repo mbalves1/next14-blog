@@ -1,4 +1,5 @@
 
+import Pagination from '@/components/pagination';
 import { getPosts } from '@/lib/posts';
 import Link from 'next/link';
 
@@ -9,7 +10,7 @@ export default async function BlogPostsPage({ searchParams }) {
   const order = searchParams.order ?? 'newest';
   const page = searchParams.page ?? 1;
   const limit = searchParams.limit ?? 3;
-  const posts = await getPosts({
+  const { posts, pageCount } = await getPosts({
     tags,
     newest: order === 'newest',
     page,
@@ -37,6 +38,10 @@ export default async function BlogPostsPage({ searchParams }) {
           </li>
         ))}
       </ul>
+
+      <div>
+        <Pagination pageCount={pageCount} ></Pagination>
+      </div>
     </>
   )
 }
