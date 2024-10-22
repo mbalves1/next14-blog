@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Navigation from "./navigation";
+import DarkMode from "./dark-mode";
 
 export default function Header() {
   return (
@@ -11,7 +12,7 @@ export default function Header() {
         <Navigation></Navigation>
       </div>
       <div>
-        Dark Toggle
+        <DarkMode />
       </div>
     </header>
   )
