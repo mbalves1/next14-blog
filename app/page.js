@@ -1,74 +1,36 @@
-'use client'
+import H1 from "@/components/h1";
+import { getPosts } from "@/lib/posts";
+import Link from "next/link";
 
-import Card from "@/components/Card"
-import { useRef, useState } from "react"
 
-function CardBorder({children}) {
-  return (
-    <div className="border rounded-md border-gray-100 p-4 my-1">
-      {children}
-    </div>
-  )
-}
+export default async function Home() {
 
-export default function Home({ searchParams }) {
-
-  const [isVisible, setIsVisible] = useState(true)
-  const [myName, setName] = useState("")
-  const inputRef = useRef()
-
-  const handleClick = () => {    
-    return setIsVisible(!isVisible);
-  }
-
-  const handleName = () => {
-    setName(inputRef.current.value);
-  }
+  const { posts } = await getPosts({ newest: true, limit: 3 });
 
   return (
     <>
-      <div className="">
-        <div>
-        Hello World!
-        </div>
+      <section className="mb-8">
+        <H1>Welcome to my page!</H1>
+        <p>My name is Murilo, I am a web developer</p>
 
-        {
-          !isVisible ?
-          <div>
-            <Card title="This is being passed from the parent!" />
-            <Card title={"This is JS"} />
-            <Card />
-          </div> :
-          <div></div>
-        }
-                
-        {
-          isVisible ?
-          <CardBorder>
-            This is JS Visible
-          </CardBorder> :
-          <div></div>
-        }
+        <p>
+          Checkout my <Link href="/about/projects" className="underline">projects</Link>, photos and blog.
+        </p>
+      </section>
 
-        <div>{ isVisible }</div>
-
-        <div className="border-red-300 p-3">{ myName }</div>
-
-        <div>
-          <input 
-            ref={inputRef}
-            className="border p-2 rounded-md text-black" 
-            placeholder="Type your name"
-          />
-        </div>
-
-        <button className="border p-2 rounded-md my-2 mr-2" onClick={handleName}>Set Name</button>
-
-        <button className="border p-2 rounded-md my-2" onClick={handleClick}>
-          { isVisible ? 'Visible' : 'Not Visible' }
-        </button>
-
-      </div>
+      <section>
+        <h2 className="text-lg mb-8">Latest on the blog</h2>
+        <ul className="font-mono">
+          {posts.map(post => <li key={post.slug}>
+            <span className="text-gray-400">
+              {post.frontmatter.date}&nbsp;
+              <Link href={`/blog/${post.slug}`} className="underline">
+                {post.frontmatter.title}
+              </Link>
+            </span>
+          </li>)}
+        </ul>
+      </section>
     </>
   );
 }
