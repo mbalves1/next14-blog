@@ -4,9 +4,11 @@ import Pagination from '@/components/pagination';
 import { getPosts } from '@/lib/posts';
 import Link from 'next/link';
 
+// export const dynamic = 'force-static';
+
 export default async function BlogPostsPage({ searchParams }) {
 
-  console.log(searchParams.tags);
+  
   const tags = searchParams.tags?.split(',');
   const order = searchParams.order ?? 'newest';
   const page = searchParams.page ?? 1;

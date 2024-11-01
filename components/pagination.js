@@ -8,7 +8,6 @@ export default function Pagination({ pageCount }) {
 
   const searchParams = useSearchParams();
   const pathName = usePathname();
-  console.log('pathName', pathName);
 
   const pages = [];
   const page = Number(searchParams.get('page') ?? 1);

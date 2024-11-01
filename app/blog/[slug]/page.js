@@ -8,7 +8,7 @@ const getPost =cache(
 )
 
 export async function generateStaticParams() {
-  const posts = await getPosts({ limit: 1000 });
+  const {posts} = await getPosts({ limit: 1000 });
 
   return posts.map(post => ({
     slug: post.slug
